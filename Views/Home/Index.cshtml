@@ -1,0 +1,39 @@
+﻿@using SQL_Task
+@using SQL_Task.Models
+@model List<Group>
+
+<div class="container d-flex justify-content-center">
+    @foreach (Group group in Model)
+    {
+        @foreach (Pupil student in group.Pupils)
+        {
+            <div class="card p-3 py-4">
+                <div class="text-center">
+                    <h3 class="mt-2">Fulname: @student.Name @student.Surname</h3>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-md-4">
+                            <h5>Age</h5> <span class="inf">@student.Age</span>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Email</h5> <span class="inf">@student.Email</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+</div>
+
+@*bu ishleyir yuxaridaki yox :(*@
+
+@*<ul>
+        @foreach (Group item in Model)
+        {
+            <li>@item.GroupNo</li>
+
+
+
+        }
+    </ul>*@
+
